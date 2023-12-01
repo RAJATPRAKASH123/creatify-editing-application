@@ -80,15 +80,16 @@ const GetImage: React.FC = () => {
                             </span>
                         </p>
                     ) : (
-                        <button
-                            className="upload-btn block mx-auto border-none rounded-lg w-40 h-12 bg-green-500 text-white"
-                            onClick={() => {
-                                console.log(selectedImages);
-                            }}
-                        >
-                            UPLOAD {selectedImages.length} IMAGE
-                            {selectedImages.length === 1 ? "" : "S"}
-                        </button>
+                        // <button
+                        //     className="upload-btn block mx-auto border-none rounded-lg w-40 h-12 bg-green-500 text-white"
+                        //     onClick={() => {
+                        //         console.log(selectedImages);
+                        //     }}
+                        // >
+                        //     UPLOAD {selectedImages.length} IMAGE
+                        //     {selectedImages.length === 1 ? "" : "S"}
+                        // </button>
+                        <></>
                     )
                 )}
 
@@ -97,18 +98,28 @@ const GetImage: React.FC = () => {
                         selectedImages.map((image, index) => (
                             <div key={image} className="image m-4 relative">
                                 <img src={image} height="200" alt="upload" />
-                                <button
-                                    onClick={() => deleteHandler(image)}
-                                    className="absolute bottom-0 right-0 cursor-pointer border-none text-white bg-lightcoral"
-                                >
-                                    delete image
-                                </button>
-                                <button
-                                    onClick={() => canvasHandler(image)}
-                                    className="absolute bottom-0 right-0 cursor-pointer border-none text-white bg-lightcoral"
-                                >
-                                    Let's take this to Canvas!!!
-                                </button>
+                                <ul className="grid grid-cols-2 gap-8 mt-2">
+                                    <li className="text-right">
+                                        <button
+                                            onClick={() => canvasHandler(image)}
+                                            className="relative inline-flex items-center justify-center px-10 py-4 overflow-hidden font-mono font-medium tracking-tighter text-white bg-gray-800 rounded-lg group"
+                                        >
+                                            <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-green-500 rounded-full group-hover:w-56 group-hover:h-56"></span>
+                                            <span className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-700"></span>
+                                            <span className="relative">Let's Creatify!</span>
+                                        </button>
+                                    </li>
+                                    <li className="text-left">
+                                        <button
+                                            onClick={() => deleteHandler(image)}
+                                            className="relative inline-flex items-center justify-center px-10 py-4 overflow-hidden font-mono font-medium tracking-tighter text-white bg-gray-800 rounded-lg group"
+                                        >
+                                            <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-red-500 rounded-full group-hover:w-56 group-hover:h-56"></span>
+                                            <span className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-700"></span>
+                                            <span className="relative">Remove Image!</span>
+                                        </button>
+                                    </li>
+                                </ul>
                                 <p className="p-2">{index + 1}</p>
                             </div>
                         ))}
