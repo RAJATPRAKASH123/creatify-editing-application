@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "./setup.sh && next build",
+    "build": "chmod u+r+x setup.sh && ./setup.sh && next build",
     "start": "next start",
     "lint": "next lint"
   },
