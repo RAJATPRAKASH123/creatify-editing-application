@@ -74,7 +74,7 @@ const GetImage: React.FC = () => {
                 {selectedImages.length > 0 && (
                     selectedImages.length > 10 ? (
                         <p className="error">
-                            You can't upload more than 10 images! <br />
+                            You cannot upload more than 10 images! <br />
                             <span>
                                 please delete <b> {selectedImages.length - 10} </b> of them{" "}
                             </span>
@@ -106,7 +106,7 @@ const GetImage: React.FC = () => {
                                         >
                                             <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-green-500 rounded-full group-hover:w-56 group-hover:h-56"></span>
                                             <span className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-700"></span>
-                                            <span className="relative">Let's Creatify!</span>
+                                            <span className="relative">Creatify!</span>
                                         </button>
                                     </li>
                                     <li className="text-left">

@@ -137,7 +137,7 @@ const MyCanvas: React.FC<CanvasProps> = ({ imageUrl, onSelect, onChange }) => {
             const pos = getScaledCursorPosition(stageRef.current);
             if (!pos) return;
             isDrawing.current = true;
-            
+
             if (tool === layers[selectedLayer][layers[selectedLayer].length - 1].tool) {
                 setLayers((prevLayers) => {
                     const updatedLayers = prevLayers.map((layer, layerIndex) => {
@@ -430,7 +430,7 @@ const MyCanvas: React.FC<CanvasProps> = ({ imageUrl, onSelect, onChange }) => {
             <Stage
                 tabIndex={-1}
                 width={window.innerWidth}
-                height={window.innerHeight-150}
+                height={window.innerHeight - 150}
                 ref={stageRef}
                 className={'inpainting-canvas-stage'}
                 style={{
